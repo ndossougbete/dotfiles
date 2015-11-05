@@ -1,0 +1,39 @@
+# include in  gitconfig from home:
+# [include]
+#  path = path/to/this/file
+
+[diff]
+  tool = meld
+[difftool]
+  prompt = false
+[mergetool]
+  prompt = false
+  keepBackup = false
+[push]
+  default = simple
+[alias]
+  br = branch
+  ci = commit
+  cia = commit --amend -C HEAD
+  co = checkout
+  d = difftool -d
+  dump = cat-file -p
+  fuck = reset HEAD --hard
+  mb = map-branches
+  r = rebase -i HEAD~5
+  sn = show --name-only
+  st = status
+  type = cat-file -t
+  hist = log --pretty=format:\"%C(yellow)%h %ad %Creset%s%d %Cblue[%an]\" --graph --date=short
+  ls = log --pretty=format:\"%C(yellow)%h%Cred%d %Creset%s%Cblue [%an]\" --decorate -10
+  logf = log --format=fuller
+  branch-point = merge-base HEAD @{u}
+  brdiff = ! git diff -M $(git branch-point)
+  brd = ! git difftool -M $(git branch-point) --dir-diff
+  grepc = ! git grep $@ -- "*.cc" "*.h" "*.mm"
+  grepg = ! git grep $@ -- "**/*.gn" "**/*.gni" "*.gyp" "*.gypi"
+  grepj = ! git grep $@ -- "*.java"
+  grepp = ! git grep $@ -- "*.py"
+  grepx = ! git grep $@ -- "*.xml"
+  yolo = ! git commit -am \"yolo: $(curl -s http://www.whatthecommit.com/index.txt)\"
+  abandon = ! export git_branch=$(git symbolic-ref --short HEAD) && git reset --hard HEAD && git clean -f && git checkout master && git branch -D ${git_branch} && unset git_branch
