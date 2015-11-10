@@ -9,7 +9,6 @@ autoload -Uz vcs_info
 zstyle ':vcs_info:*' stagedstr '%F{28}●'
 zstyle ':vcs_info:*' unstagedstr '%F{11}●'
 zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{11}%r'
 zstyle ':vcs_info:*' enable git
 
 # applied in the precmd section
@@ -211,5 +210,5 @@ function get-vcs-status() {
   vcs_info
 }
 
-[[ -z $precmd_functions ]] && precmd_functions=()
-precmd_functions=($precmd_functions get-vcs-status)
+autoload add-zsh-hook
+add-zsh-hook precmd get-vcs-status
