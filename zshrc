@@ -177,6 +177,8 @@ alias aldh="ald H ${LC_GREP_INCLUSION_FILTER}"
 alias alccg="alcl && alcg"
 alias alcch="alcl && alch"
 
+alias ins="sudo apt-get install"
+
 ##########################
 # Variables
 ##########################
@@ -194,7 +196,6 @@ export GREP_OPTIONS="--color=auto"
 ##########################
 
 
-eval $(thefuck --alias)
 
 ##########################
 # Precmd
