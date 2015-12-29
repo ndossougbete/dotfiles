@@ -182,6 +182,10 @@ alias ins="sudo apt-get install"
 ##########################
 # Variables
 ##########################
+
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
 export PATH="${PATH}:${HOME}/Scripts"
 export ANDROID_LOG_TAGS="BluetoothManagerService:W HeadsetStateMachine:W WifiService:W Sensors:S WifiStateMachine:S dalvikvm:E"
 

@@ -19,7 +19,6 @@
   d = difftool -d
   dump = cat-file -p
   fuck = reset HEAD --hard
-  mb = map-branches
   r = rebase -i HEAD~5
   sn = show --name-only
   st = status

@@ -1,0 +1,19 @@
+alias python=python3
+
+source ~/Projects/third_party/antigen/antigen.zsh
+
+# antigen - http://antigen.sharats.me/
+
+# oh-my-zsh
+antigen bundle pip
+antigen bundle gitfast
+antigen bundle autopep8
+antigen bundle thefuck
+
+# other
+antigen bundle Tarrasch/zsh-autoenv
+
+# Muse be the last
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+antigen apply
