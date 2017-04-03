@@ -34,7 +34,9 @@ PROMPT='%{$fg_bold[$(exit_code_dependent_color_)]%}%n@%m ${vcs_info_msg_0_} %{$f
 setopt histignorealldups sharehistory
 
 # Use emacs keybindings even if our EDITOR is set to vi
-#bindkey -e # huh? why is it there?
+# If we don't do that, some simple key combos switch to vicmd mode, which is
+# a big pain.
+bindkey -e
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=1000
@@ -123,12 +125,12 @@ alias rg='noglob rg'
 ##
 # Example: rename all the html files in the current file tree
 #   fname *.html each rename 's/.html$/.var/'
-function fname() {
+fname() {
   noglob find $1 -name $2
 }
 alias -g each="-print0 | xargs -0"
 
-function pull-bug-reports() {
+pull-bug-reports() {
   (
     mkdir -p bugreports && cd bugreports && adb pull data/data/com.android.shell/files/bugreports
   )
@@ -163,6 +165,12 @@ parent-branch() {
   )
 }
 
+##
+# Runs the provided command from the node_module/.bin directory associated
+# to the current project.
+npm-exec() {
+  $(npm bin)/$@
+}
 
 LC_GREP_INCLUSION_FILTER="'(^(V|D|I|W|E|WTF)/cr)|DGN|FATAL|/System.err|(^(V|D|I|W|E|WTF)/dgn)|TestRunner'"
 
