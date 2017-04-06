@@ -19,8 +19,10 @@
   d = difftool -d
   dump = cat-file -p
   fuck = reset HEAD --hard
+  nuke = clean -f -d
+  mb = map-branches
   r = rebase -i HEAD~5
-  sn = show --name-only
+  sn = show --name-status
   st = status
   type = cat-file -t
   hist = log --pretty=format:\"%C(yellow)%h %ad %Creset%s%d %Cblue[%an]\" --graph --date=short
