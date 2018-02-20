@@ -104,8 +104,8 @@ alias l='ls -CF'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
-alias -g G='| egrep'
-alias -g H='| egrep -e "$" -e'
+alias -g G='| egrep --color=auto'
+alias -g H='| egrep --color=auto -e "$" -e'
 
 # Stop complaining about py files indented with 2 spaces
 alias pep8='pep8 --ignore=E111,E114'
@@ -174,6 +174,7 @@ npm-exec() {
 
 LC_GREP_INCLUSION_FILTER="'(^(V|D|I|W|E|WTF)/cr)|DGN|FATAL|/System.err|(^(V|D|I|W|E|WTF)/dgn)|TestRunner'"
 
+alias grep="grep --color=auto"
 alias alc="adb logcat -v tag"
 alias ald="adb logcat -d -v tag"
 alias alcl="adb logcat -c"
@@ -196,9 +197,6 @@ export EDITOR="$VISUAL"
 
 export PATH="${PATH}:${HOME}/Scripts"
 export ANDROID_LOG_TAGS="BluetoothManagerService:W HeadsetStateMachine:W WifiService:W Sensors:S WifiStateMachine:S dalvikvm:E"
-
-# Always colorize grep output except when it's piped somewhere.
-export GREP_OPTIONS="--color=auto"
 
 # TODO For working python scripts
 #export PYTHONPATH=$PYTHONPATH:${HOME}/Projects/py_modules
