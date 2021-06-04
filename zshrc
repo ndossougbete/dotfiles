@@ -195,7 +195,7 @@ alias ins="sudo apt-get install"
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
-export PATH="${PATH}:${HOME}/Scripts"
+export PATH="${PATH}:${HOME}/.local/bin"
 export ANDROID_LOG_TAGS="BluetoothManagerService:W HeadsetStateMachine:W WifiService:W Sensors:S WifiStateMachine:S dalvikvm:E"
 
 # TODO For working python scripts

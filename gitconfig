@@ -38,3 +38,6 @@
   grepx = ! git grep $@ -- "*.xml"
   yolo = ! git commit -am \"yolo: $(curl -s http://www.whatthecommit.com/index.txt)\"
   abandon = ! export git_branch=$(git symbolic-ref --short HEAD) && git reset --hard HEAD && git clean -f && git checkout master && git branch -D ${git_branch} && unset git_branch
+[user]
+	email = my@email.tld
+	name = Nicolas Dossou-Gbete

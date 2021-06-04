@@ -1,6 +1,6 @@
 alias python=python3
 
-source ~/Projects/third_party/antigen/antigen.zsh
+source ~/.local/lib/antigen/antigen.zsh
 
 # antigen - http://antigen.sharats.me/
 
