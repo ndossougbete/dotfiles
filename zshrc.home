@@ -2,6 +2,9 @@ alias python=python3
 
 source ~/.local/lib/antigen/antigen.zsh
 
+# depot_tools - https://commondatastorage.googleapis.com/chrome-infra-docs/flat/depot_tools/docs/html/depot_tools_tutorial.html#_setting_up
+export PATH=${HOME}/.local/lib/depot_tools:$PATH
+
 # antigen - http://antigen.sharats.me/
 
 # oh-my-zsh
