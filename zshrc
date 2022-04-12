@@ -23,7 +23,7 @@ function exit_code_dependent_color_() {
   fi
 }
 
-PROMPT='%{$fg_bold[$(exit_code_dependent_color_)]%}%n@%m ${vcs_info_msg_0_} %{$fg_bold[blue]%}%~
+PROMPT='%{$fg_bold[$(exit_code_dependent_color_)]%}%n@%2m ${vcs_info_msg_0_} %{$fg_bold[blue]%}%~
 %#%{$reset_color%} '
 
 
