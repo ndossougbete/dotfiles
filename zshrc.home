@@ -11,7 +11,6 @@ export PATH=${HOME}/.local/lib/depot_tools:$PATH
 antigen bundle pip
 antigen bundle gitfast
 antigen bundle autopep8
-antigen bundle thefuck
 
 # other
 antigen bundle Tarrasch/zsh-autoenv

@@ -36,7 +36,7 @@
   grepj = ! git grep $@ -- "*.java"
   grepp = ! git grep $@ -- "*.py"
   grepx = ! git grep $@ -- "*.xml"
-  yolo = ! git commit -am \"yolo: $(curl -s http://www.whatthecommit.com/index.txt)\"
+  yolo = ! git commit -am \"yolo: $(curl -s -L http://www.whatthecommit.com/index.txt)\"
   abandon = ! export git_branch=$(git symbolic-ref --short HEAD) && git reset --hard HEAD && git clean -f && git checkout master && git branch -D ${git_branch} && unset git_branch
 [user]
 	email = my@email.tld
