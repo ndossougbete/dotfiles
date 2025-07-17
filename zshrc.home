@@ -1,3 +1,44 @@
+# --------------------------------------------------------------------
+# Keybindings for common terminal actions
+# --------------------------------------------------------------------
+# This section fixes common keybinding issues in zsh, especially when
+# running inside terminal emulators like Terminator or inside tmux.
+
+zmodload zsh/terminfo
+
+# --- Standard navigation keys using terminfo for portability ---
+
+# Home/End keys to move to beginning/end of line
+[[ -n "${terminfo[khome]}" ]] && bindkey "${terminfo[khome]}" beginning-of-line
+[[ -n "${terminfo[kend]}" ]] && bindkey "${terminfo[kend]}" end-of-line
+
+# --- Manual Fallback for Home/End ---
+# If the keys still don't work, we manually bind the most common key codes
+# sent by terminals like Terminator, xterm, and Konsole, or by tmux.
+# This is a more direct and reliable method. Zsh will simply use whichever
+# binding matches the key code it receives.
+bindkey '\e[H'  beginning-of-line  # Common for Home
+bindkey '\e[F'  end-of-line      # Common for End
+bindkey '\e[1~' beginning-of-line  # Alternative for Home
+bindkey '\e[4~' end-of-line      # Alternative for End
+
+
+# Delete key (forward delete)
+[[ -n "${terminfo[kdch1]}" ]] && bindkey "${terminfo[kdch1]}" delete-char
+
+# PageUp/PageDown to jump to the start/end of command history
+[[ -n "${terminfo[kpp]}" ]] && bindkey "${terminfo[kpp]}" beginning-of-history
+[[ -n "${terminfo[knp]}" ]] && bindkey "${terminfo[knp]}" end-of-history
+
+# --- Word-wise editing (often requires manual escape sequences) ---
+
+# Ctrl+Left/Right Arrow to move word-by-word.
+bindkey '\e[1;5C' forward-word
+bindkey '\e[1;5D' backward-word
+
+# Alt+Backspace to delete a word backward (addresses issue in your tmux.conf).
+bindkey '\e\^?' backward-kill-word
+
 alias python=python3
 
 source ~/.local/lib/antigen/antigen.zsh
