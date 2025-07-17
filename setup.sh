@@ -2,7 +2,7 @@
 
 git clone git@github.com:ndossougbete/dotfiles.git
 
-if ! (( test $? ))
+if [ $? -ne 0 ]
 then
   exit 1
 fi
@@ -14,6 +14,7 @@ ln -s  $(pwd)/gitconfig ~/.gitconfig
 echo "source $(pwd)/zshrc" > ~/.zshrc
 echo "source $(pwd)/zshrc.home" >> ~/.zshrc
 
+# Consider using a tool like stow to manage dotfiles instead of manually linking them.
 mkdir -p ~/.local/lib/antigen
 sh -c 'echo "From https://github.com/zsh-users/antigen" > ~/.local/lib/antigen/README' 
 curl -L git.io/antigen > ~/.local/lib/antigen/antigen.zsh
