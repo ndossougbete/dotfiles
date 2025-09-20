@@ -21,6 +21,6 @@ dotfiles
   - Using `dnf`
 
     ```
-    sudo dnf install curl vim meld terminator zsh python3
+    sudo dnf install curl vim meld terminator zsh python3 fzf
     curl -s https://github.com/ndossougbete/dotfiles/blob/master/setup.sh | sh
     ```

@@ -41,12 +41,20 @@ bindkey '\e\^?' backward-kill-word
 
 alias python=python3
 
-source ~/.local/lib/antigen/antigen.zsh
-
 # depot_tools - https://commondatastorage.googleapis.com/chrome-infra-docs/flat/depot_tools/docs/html/depot_tools_tutorial.html#_setting_up
 export PATH=${HOME}/.local/lib/depot_tools:$PATH
 
+autoload -Uz bashcompinit
+bashcompinit -i
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
 # antigen - http://antigen.sharats.me/
+
+source ~/.local/lib/antigen/antigen.zsh
 
 # oh-my-zsh
 antigen bundle pip

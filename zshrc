@@ -74,6 +74,7 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 zstyle ':completion:*' max-errors 3 numeric
 
+source <(fzf --zsh)
 
 #########################
 # History and cd -
